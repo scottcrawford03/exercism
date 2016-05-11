@@ -2,12 +2,11 @@ class Binary
   VERSION = 1
   attr_reader :string
   def initialize(string)
-    raise ArgumentError.new("Value not a valid binary number") if !(string =~ /\b[01]+\b/)
+    raise ArgumentError.new("Value not a valid binary number") unless string =~ /^[01]+$/
     @string = string
   end
 
   def to_decimal
-    numbers = string.reverse.chars.map.with_index { |s, i| s.to_i*(2**i)}
-    numbers.reduce(:+)
+    string.to_i(2)
   end
 end
