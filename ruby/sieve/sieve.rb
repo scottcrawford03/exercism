@@ -24,9 +24,7 @@ class Sieve
 
   def find_next_divider(previous_divider)
     next_divider = previous_divider + 1
-    if marked_nums[next_divider]
-      next_divider = find_next_divider(next_divider)
-    end
+    next_divider = find_next_divider(next_divider) if marked_nums[next_divider]
     next_divider
   end
 end
