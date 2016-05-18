@@ -47,7 +47,6 @@ class RunLengthEncodingTest < Minitest::Test
   end
 
   def test_decode_unicode
-    skip
     input = '⏰3⚽2⭐⏰'
     output = '⏰⚽⚽⚽⭐⭐⏰'
     assert_equal output, RunLengthEncoding.decode(input)
@@ -62,7 +61,6 @@ class RunLengthEncodingTest < Minitest::Test
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
-    skip
     assert_equal 1, RunLengthEncoding::VERSION
   end
 end
